@@ -1,0 +1,24 @@
+#
+# This environment definition is designed to offer a minimal
+# working environment to *build* the transportation tutorial
+# docs into HTML format, not to run the tutorials.
+#
+# To use this file to create a new environment::
+#  conda env create -f docbuild.yml
+# To use this file to update an existing environment::
+#  conda env update -f docbuild.yml --prune
+#
+name: docbuild
+
+channels:
+- conda-forge
+- jpn
+
+dependencies:
+- python=3.7
+- sphinx
+- sphinxcontrib-restbuilder
+- nbsphinx
+- ipython
+- jupyter_client
+- jpn::guzzle_sphinx_theme>=0.7.11

@@ -1,0 +1,28 @@
+
+
+SERPM8-BASE2015-HOUSEHOLDS.csv.gz:
+    description: >-
+        Data on synthetic households residing in the Jupiter study area.
+        
+SERPM8-BASE2015-PERSONS.csv.gz:
+    description: >-
+        Data on synthetic persons residing in the Jupiter study area.
+        
+SERPM8-BASE2015-TOURS.csv.gz:
+    description: >-
+        All individual tours made by synthetic persons residing in the Jupiter 
+        study area. Note this includes home-based tours that have destinations 
+        outside the study area, as well as work-baed tours that may be entirely
+        outside the study area.
+
+SERPM8-BASE2015-TRIPS.csv.gz:
+    description: >-
+        All trips on individual tours made by synthetic persons residing in the 
+        Jupiter study area. Note this includes trips that have origins or 
+        destinations outside the study area.
+
+FL-BRIDGES.csv.gz:
+    description: >-
+        An count of deficient bridges in Florida from the National Bridge Inventory.
+        Data is from 2016, https://www.fhwa.dot.gov/bridge/nbi/no10/county16.cfm
+
