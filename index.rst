@@ -35,7 +35,7 @@ on your local machine** beyond a standard web browser, which you
 undoubtedly already have.
 
 .. image:: https://mybinder.org/badge_logo.svg
-   :target: https://mybinder.org/v2/gh/jpn--/python-for-transportation-modeling.git/v1.0.1?filepath=course-content
+   :target: https://mybinder.org/v2/gh/jpn--/python-for-transportation-modeling.git/v1.0.2?urlpath=lab/tree/course-content
    :alt: launch binder
    :align: left
 
