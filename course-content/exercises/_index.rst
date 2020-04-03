@@ -5,6 +5,7 @@ Exercises
 
 .. toctree::
 
+	exercise-functions
     exercise-groupby-transform
     exercise-crosstable-pivottable
     exercise-linear-regression
@@ -23,6 +24,7 @@ Solutions
 
 .. toctree::
 
+	solution-functions
     solution-groupby-transform
     solution-crosstable-pivottable
     solution-linear-regression
