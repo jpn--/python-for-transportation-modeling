@@ -25,7 +25,7 @@ copyright = '2019 Florida Department of Transportation'
 html_show_copyright = False
 author = 'Cambridge Systematics, Inc. for Florida Department of Transportation'
 
-VERSION = "1.0.1"
+VERSION = "1.0.2"
 
 # The short X.Y version
 version = VERSION
@@ -48,7 +48,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
-    'sphinx.ext.imgmath',
+    'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
