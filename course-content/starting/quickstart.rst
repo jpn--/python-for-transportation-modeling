@@ -14,12 +14,21 @@ If you're impatient and just want to get going, follow these instructions.
 
         conda env create camsys/tt
 
-3.  Open "Anaconda Prompt" (Windows) or the Terminal (Linux/MacOS) and enter this commands
-    to start up *Jupyter Lab*:
+3.  Open "Anaconda Prompt" (Windows) or the Terminal (Linux/MacOS) and enter these two commands
+    to start up *Jupyter Notebook*:
 
     .. code-block:: console
 
-        conda activate tt && jupyter lab
+        conda activate tt
+        jupyter notebook
+
+	Alternatively, if you prefer the *Jupyter Lab* interface:
+	
+    .. code-block:: console
+
+        conda activate tt
+        jupyter lab
+
 
 Only *Step 3* is required for subsequent sessions on the same computer.
 
