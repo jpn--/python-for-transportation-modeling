@@ -21,16 +21,16 @@ sys.path.insert(0, os.path.abspath('..\\.'))
 # -- Project information -----------------------------------------------------
 
 project = 'Python for Transportation'
-copyright = '2019 Florida Department of Transportation'
+copyright = '2020 Florida Department of Transportation'
 html_show_copyright = False
 author = 'Cambridge Systematics, Inc. for Florida Department of Transportation'
 
-VERSION = "1.0.2"
+VERSION = "1.0.3"
 
 # The short X.Y version
 version = VERSION
 # The full version, including alpha/beta/rc tags
-release = '{}, March 2020'.format(VERSION)
+release = '{}, April 2020'.format(VERSION)
 
 
 # -- General configuration ---------------------------------------------------
