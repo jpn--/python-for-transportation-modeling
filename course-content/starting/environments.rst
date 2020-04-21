@@ -63,7 +63,7 @@ Clearly, if you have a lot of packages to install, this can become a long
 command, and a bit unwieldy to use.  Fortunately, you can instead just
 describe the environment you want to create in a YAML file instead of
 doing so on the command line.  To do so, you would get or create a YAML
-file that looks something like this:
+file named 'my_environment.yml' that looks something like this:
 
 .. code-block:: yaml
 
@@ -89,7 +89,7 @@ And then create the environment using the file.
 
 .. code-block:: console
 
-    conda env create -f environment.yml
+    conda env create -f my_environment.yml
 
 You may notice that the ``specialty_package`` in the environment.yml file
 is installed using pip instead of conda.  This is

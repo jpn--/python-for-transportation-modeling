@@ -30,4 +30,5 @@ and run it in sequence like this:
 
 .. code-block:: console
 
-    conda activate tt && jupyter lab
+    conda activate tt
+    jupyter lab
