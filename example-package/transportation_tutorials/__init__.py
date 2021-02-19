@@ -37,6 +37,7 @@ def set_cache_dir(location=None, compress=True, verbose=0, **kwargs):
 
 	make_cache = (
 		(ox, 'gdf_from_place'),
+		(ox, 'geometries_from_place'),
 		(ox, 'graph_from_bbox'),
 		(requests, 'get'),
 		(requests, 'post'),
@@ -46,12 +47,14 @@ def set_cache_dir(location=None, compress=True, verbose=0, **kwargs):
 		try:
 			func = getattr(module, f"_{func_name}_orig")
 		except AttributeError:
-			func = getattr(module, func_name)
-			setattr(module, f"_{func_name}_orig", func)
-		setattr(module, func_name, memory.cache(func))
-
-
-
+			try:
+				func = getattr(module, func_name)
+			except:
+				func = None
+			else:
+				setattr(module, f"_{func_name}_orig", func)
+		if func is not None:
+			setattr(module, func_name, memory.cache(func))
 
 
 set_cache_dir()
