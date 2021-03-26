@@ -1,0 +1,5 @@
+caseid,Income,CarTime,CarCost,BusTime,BusCost,WalkTime,Chosen
+1,30000,30,150,40,100,20,Car
+2,30000,25,125,35,100,0,Bus
+3,40000,40,125,50,75,30,Walk
+4,50000,15,225,20,150,10,Walk

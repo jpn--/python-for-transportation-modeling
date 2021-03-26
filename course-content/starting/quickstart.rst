@@ -4,8 +4,20 @@ Quick Start
 
 If you're impatient and just want to get going, follow these instructions.
 
-1.  Download and run the Python 3.7 installer for your computer from `Anaconda.com <https://www.anaconda.com/distribution>`_.
+1.  Download and run the Python installer for your computer from `Anaconda.com <https://www.anaconda.com/distribution>`_.
     Install for the current user only, which does not require administrator permissions.
+    If you installed anaconda previously, you usually don't need to re-install it, but
+    you may want to update conda to be sure you're running the latest version.  To do
+    so, open "Anaconda Prompt" (Windows) or the Terminal (Linux/MacOS) and enter:
+
+    .. code-block:: console
+
+        conda update -n base -c defaults conda
+
+    If this update command does not work (probably because you first installed anaconda
+    a long long time ago), you may want to consider uninstalling it and starting fresh.
+    If you don't know how, consider talking to your I.T. department about how to update
+    conda successfully.
 
 2.  Open "Anaconda Prompt" (Windows) or the Terminal (Linux/MacOS) and enter this command to
     set up a working environment to use with this tutorial:

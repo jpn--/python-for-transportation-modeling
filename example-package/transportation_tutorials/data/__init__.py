@@ -13,6 +13,7 @@ def data(name, file=None):
 		csvfile = os.path.join(this_directory, f'{name}.csv.gz')
 		dbffile = os.path.join(this_directory, f'{name}.dbf.gz')
 		omxfile = os.path.join(this_directory, f'{name}.omx')
+		xlsxfile = os.path.join(this_directory, f'{name}.xlsx')
 		if os.path.isfile(tarfile):
 			f, f_names = inflate_tar(tarfile)
 			loaded_data[name] = os.path.join(f, f_names[0])
@@ -24,6 +25,8 @@ def data(name, file=None):
 		elif os.path.isfile(omxfile):
 			f, f_name = duplicate(omxfile)
 			loaded_data[name] = os.path.join(f, f_name)
+		elif os.path.isfile(xlsxfile):
+			loaded_data[name] = xlsxfile
 		else:
 			raise FileNotFoundError(os.path.join(this_directory, f'{name}.*.gz'))
 	if file is not None:

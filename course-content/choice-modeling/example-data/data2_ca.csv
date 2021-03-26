@@ -1,0 +1,5 @@
+obs,mode,time,cost,chosen
+1,bus,20,10,True
+1,car,10,20,False
+2,car,12,16,True
+2,bus,21,14,False
