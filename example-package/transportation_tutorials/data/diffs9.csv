@@ -1,0 +1,10 @@
+obs,choice,timediff,costdiff
+1,car,9,-7
+2,bus,-8,-5
+3,bus,4,-6
+4,bus,-7,-2
+5,car,2,0
+6,bus,1,-5
+7,car,-3,4
+8,bus,-2,-7
+9,car,5,0

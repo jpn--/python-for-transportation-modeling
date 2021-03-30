@@ -8,16 +8,17 @@ name: tt
 
 channels:
 - conda-forge
-- plotly
 
 dependencies:
-- python=3.7
+- python=3.9
 - pip
 
 # Math
 - numpy>=1.16
-- pandas>=0.23.4
+- pandas>=1.2
 - scipy>=1.2
+- numba
+- autograd
 
 # Networks
 - networkx>=2.2
@@ -26,7 +27,7 @@ dependencies:
 - yamllint>=1.11
 
 # Data Storage and File Management
-- pytables=3.4.4
+- pytables>=3.6
 - h5py>=2.8.0
 - hdf5>=1.10.2
 - appdirs>=1.4.3
@@ -36,19 +37,20 @@ dependencies:
 - seaborn>=0.9
 - pydot
 - graphviz>=2.38
-- plotly>=3.2.1
-- plotly::plotly-orca  # Plotly Static Image Export
+- plotly>=4.14
+- python-kaleido  # Plotly Static Image Export
 
 # Mapping
 - fiona>=1.7.11
 - gdal>=2.2.4
-- geopandas>=0.4
+- geopandas
 - krb5>=1.16
 - shapely>=1.6.4
 - osmnx>=0.9
 - contextily
 - libiconv
 - fontconfig
+- folium
 
 # User Interface
 - ipywidgets>=7.2

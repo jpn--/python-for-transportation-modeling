@@ -9,6 +9,7 @@ loaded_data = {}
 def data(name, file=None):
 	global loaded_data
 	if name not in loaded_data:
+		rawfile = os.path.join(this_directory, name)
 		tarfile = os.path.join(this_directory, f'{name}.tar.gz')
 		csvfile = os.path.join(this_directory, f'{name}.csv.gz')
 		dbffile = os.path.join(this_directory, f'{name}.dbf.gz')
@@ -27,6 +28,8 @@ def data(name, file=None):
 			loaded_data[name] = os.path.join(f, f_name)
 		elif os.path.isfile(xlsxfile):
 			loaded_data[name] = xlsxfile
+		elif os.path.isfile(rawfile):
+			loaded_data[name] = rawfile
 		else:
 			raise FileNotFoundError(os.path.join(this_directory, f'{name}.*.gz'))
 	if file is not None:

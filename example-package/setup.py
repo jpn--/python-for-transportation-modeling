@@ -32,6 +32,7 @@ setup(
         # If sub-package contains these types of files, include them:
         'transportation_tutorials': [
             'data/*.yml',
+            'data/*.csv',
             'data/*.csv.gz',
             'data/*.tar.gz',
             'data/*.dbf.gz',

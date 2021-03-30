@@ -26,6 +26,9 @@ If you're impatient and just want to get going, follow these instructions.
 
         conda env create camsys/tt
 
+    If you had previously installed this "tt" environment and you want to update to the
+    latest version, replace "create" with "update", but otherwise the process is the same.
+
 3.  Open "Anaconda Prompt" (Windows) or the Terminal (Linux/MacOS) and enter these two commands
     to start up *Jupyter Notebook*:
 
