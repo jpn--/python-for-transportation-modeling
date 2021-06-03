@@ -76,11 +76,25 @@ in the `tt` conda environment, and then you'll have the files you need in the fu
 
 If you already have an environment named "tt" (i.e. because you installed this tutorial in the
 past once before) then you won't be able to use the command `conda env create camsys/tt`.  In
-this case you have two options:
+this case you have two options.
 
-- To delete the "tt" environment and start over, run `conda env remove -n tt`, confirm at the
-  prompt, and then try `conda env create camsys/tt` again.
-- To update the "tt" environment in place, run `conda env update camsys/tt`.
+To delete the "tt" environment and start over, run:
+
+.. code-block:: console
+
+    conda env remove -n tt
+
+You'll probably need to confirm this action at the prompt, and then try installing again
+following the normal instructions above.  Alternatively, you can update the "tt"
+environment in place by running:
+
+.. code-block:: console
+
+    conda env update camsys/tt
+
+This is an easy path if it works cleaning, but if you have any trouble updating
+the environment in place, you will almost certainly find it easier to start over
+(which is not very hard) rather than to try to fix the broken conda environment.
 
 **I didn't get an environment named "tt" when running `conda env create camsys/tt`.**
 
@@ -89,3 +103,14 @@ directory named "environment.yml", and if this file exists it will be used to cr
 environment instead of downloading the environment definition from the cloud.  To avoid this,
 use the `conda env create camsys/tt` command in a directory that does not contain a file
 with this name.
+
+**I got an error complaining that 'osmnx' has no attribute 'gdf_from_place'.**
+
+This error indicates that one or more packages in your environment are out-of-date,
+possibly because you installed some of the tools for this tutorial some time ago.
+Try updating your working environment by running:
+
+.. code-block:: console
+
+    conda env update camsys/tt
+
