@@ -1,6 +1,9 @@
 import contextily as ctx
 import geopandas as gpd
 from matplotlib import pyplot as plt
+from pyproj import CRS
+
+providers = ctx.providers
 
 def make_basemap(xlim, ylim, figsize=(10, 10), axis=None, *, tiles=None, zoom=1, crs=None, epsg=None):
 	"""
@@ -38,9 +41,9 @@ def make_basemap(xlim, ylim, figsize=(10, 10), axis=None, *, tiles=None, zoom=1,
 	"""
 
 	if epsg is not None:
-		crs = {'init': f'epsg:{epsg}'}
+		crs = CRS.from_epsg(epsg)
 	if crs is None:
-		crs = {'init': f'epsg:3857'}
+		crs = CRS.from_epsg(3857)
 
 	fig, ax = plt.subplots(figsize=figsize)
 	if axis is not None:
@@ -52,7 +55,15 @@ def make_basemap(xlim, ylim, figsize=(10, 10), axis=None, *, tiles=None, zoom=1,
 	return ax
 
 
-def add_basemap(ax, zoom, url='http://tile.stamen.com/terrain/tileZ/tileX/tileY.png', crs=None, epsg=None, axis=None, figsize=(10, 10), ):
+def add_basemap(
+		ax,
+		zoom,
+		source='http://tile.stamen.com/terrain/tileZ/tileX/tileY.png',
+		crs=None,
+		epsg=None,
+		axis=None,
+		figsize=(10, 10),
+):
 	"""
 	Add a basemap to a matplotlib map plot.
 
@@ -65,7 +76,7 @@ def add_basemap(ax, zoom, url='http://tile.stamen.com/terrain/tileZ/tileX/tileY.
 		The zoom level of the map tiles to download.  Note that this does
 		not actually change the magnification of the rendered map, just the size
 		and level of detail in the mapping tiles used to render a base map.
-	url: str
+	source: str
 		The base url to use for the map tile, or a named value in
 		contextily.sources.
 	crs: dict, optional
@@ -85,30 +96,28 @@ def add_basemap(ax, zoom, url='http://tile.stamen.com/terrain/tileZ/tileX/tileY.
 	-------
 	AxesSubplot
 	"""
-
-
-	url = getattr(ctx.sources, url, url)
+	source = getattr(ctx.providers, source, source)
 
 	xmin, xmax, ymin, ymax = ax.axis()
 
 	if epsg is not None:
-		crs = {'init': f'epsg:{epsg}'}
+		crs = CRS.from_epsg(epsg)
 
 	if crs is not None:
 		from shapely.geometry import box
-		mapping_area = gpd.GeoDataFrame(geometry=[box(xmin, ymin, xmax, ymax)], crs=crs).to_crs(epsg=3857)
+		mapping_area = gpd.GeoDataFrame(geometry=[box(xmin, ymin, xmax, ymax)], crs=crs).to_crs(CRS.from_epsg(3857))
 		xmin_, ymin_, xmax_, ymax_ = mapping_area.total_bounds
-		basemap, extent_ = ctx.bounds2img(xmin_, ymin_, xmax_, ymax_, zoom=zoom, url=url)
+		basemap, extent_ = ctx.bounds2img(xmin_, ymin_, xmax_, ymax_, zoom=zoom, source=source)
 		xmin_, xmax_, ymin_, ymax_ = extent_
-		xmin_, ymin_, xmax_, ymax_ = tuple(gpd.GeoDataFrame(geometry=[box(xmin_, ymin_, xmax_, ymax_)], crs={'init': 'epsg:3857'}).to_crs(crs).total_bounds)
+		xmin_, ymin_, xmax_, ymax_ = tuple(gpd.GeoDataFrame(geometry=[box(xmin_, ymin_, xmax_, ymax_)], crs=CRS.from_epsg(3857)).to_crs(crs).total_bounds)
 		extent = (xmin_, xmax_, ymin_, ymax_)
 	else:
-		basemap, extent = ctx.bounds2img(xmin, ymin, xmax, ymax, zoom=zoom, url=url)
+		basemap, extent = ctx.bounds2img(xmin, ymin, xmax, ymax, zoom=zoom, source=source)
 	ax.imshow(basemap, extent=extent, interpolation='bilinear')
 	# restore original x/y limits
 	ax.axis((xmin, xmax, ymin, ymax))
 
-	if 'openstreetmap.org' in url:
+	if 'openstreetmap.org' in source:
 		attribution_html = (
 			"""Map tiles and data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under """
 			"""<a href="http://www.openstreetmap.org/copyright">ODbL</a>."""
@@ -116,7 +125,7 @@ def add_basemap(ax, zoom, url='http://tile.stamen.com/terrain/tileZ/tileX/tileY.
 		attribution_txt = (
 			"""Map tiles and data by OpenStreetMap, under ODbL."""
 		)
-	elif 'stamen.com' in url:
+	elif 'stamen.com' in source:
 		attribution_html = (
 			"""Map tiles by <a href="http://stamen.com">Stamen Design</a>, """
 			"""under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. """
