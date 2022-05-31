@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.idea
+course-content/geographic-analysis/cache
