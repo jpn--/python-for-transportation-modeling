@@ -25,12 +25,12 @@ copyright = '2020 Florida Department of Transportation'
 html_show_copyright = False
 author = 'Cambridge Systematics, Inc. for Florida Department of Transportation'
 
-VERSION = "1.1.0"
+VERSION = "1.1.2"
 
 # The short X.Y version
 version = VERSION
 # The full version, including alpha/beta/rc tags
-release = '{}, April 2020'.format(VERSION)
+release = '{}, June 2022'.format(VERSION)
 
 
 # -- General configuration ---------------------------------------------------
