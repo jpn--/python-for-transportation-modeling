@@ -8,3 +8,4 @@ osmnx>=0.9
 folium>=0.8
 appdirs
 ipython
+contextily
