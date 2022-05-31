@@ -1,8 +1,21 @@
+======================
+Zero Install - Just Go
+======================
+
+On most tutorial pages, you'll see an "Open in Colab" badge:
+
+.. image:: https://colab.research.google.com/assets/colab-badge.svg
+   :target: https://colab.research.google.com/github/jpn--/python-for-transportation-modeling/blob/master/course-content/basic-python/basics.ipynb
+
+Click it, and the notebook will open in Google Colab, a free Jupyter notebook-like
+interface that runs on google's servers (you'll need a Google login to run code).
+
 ================
 Quick Start
 ================
 
-If you're impatient and just want to get going, follow these instructions.
+If you want to install Python to run locally on your machine but you are impatient
+and just want to get going as fast as possible, follow these instructions.
 
 1.  Download and run the Python installer for your computer from `Anaconda.com <https://www.anaconda.com/distribution>`_.
     Install for the current user only, which does not require administrator permissions.
