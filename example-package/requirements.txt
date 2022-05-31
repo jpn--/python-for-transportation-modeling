@@ -1,5 +1,6 @@
 numpy>=1.15
 pandas>=0.24
+matplotlib==3.2.2
 geopandas>=0.4
 networkx>=2.2
 osmnx>=0.9
