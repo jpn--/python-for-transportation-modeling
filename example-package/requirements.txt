@@ -1,7 +1,5 @@
 numpy>=1.15
 pandas>=0.24
-matplotlib>=3.0
-seaborn>=0.9.0
 geopandas>=0.4
 networkx>=2.2
 osmnx>=0.9

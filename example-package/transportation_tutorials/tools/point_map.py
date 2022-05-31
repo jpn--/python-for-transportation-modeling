@@ -61,7 +61,8 @@ def generate_points_in_areas(gdf, values, points_per_unit=1, seed=None):
 	new_values = (values / points_per_unit).astype(int)
 	g = gpd.GeoDataFrame(data={'vals': new_values}, geometry=geometry)
 	a = g.apply(lambda row: tuple(generate_random_points_in_polygon(row['geometry'], row['vals'], seed)), 1)
-	b = gpd.GeoSeries(a.apply(pd.Series).stack(), crs=geometry.crs)
+	s = lambda x: gpd.GeoSeries(x)
+	b = gpd.GeoSeries(a.apply(s).stack(), crs=geometry.crs)
 	b.name = 'geometry'
 	return b
 
