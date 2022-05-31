@@ -3,7 +3,7 @@ pandas>=0.24
 matplotlib==3.2.2
 geopandas>=0.4
 networkx>=2.2
-osmnx>=0.9
+osmnx==0.15.1
 folium>=0.8
 appdirs
 ipython
