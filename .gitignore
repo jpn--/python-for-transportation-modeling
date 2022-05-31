@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 .idea
 course-content/geographic-analysis/cache
+course-content/tabular-analysis/*.csv.gz
+course-content/tabular-analysis/*.dbf
